@@ -4,9 +4,10 @@
     ViewBag.Title = "Blow Out!";
 }
 
+
 <div class="jumbotron">
     <h1>"Welcome to Blow Out!</h1>
-    <p class="lead">We blow our competitors out of the water</p>
+    <p class="lead" style="text-align:center">We blow our competitors out of the water</p>
 </div>
 
 <div class="row">
@@ -15,16 +16,16 @@
         <p>
             View our wide variety of rental options, including new and used instruments.
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">View Rentals &raquo;</a></p>
+        <p><a class="btn btn-default" href='@Url.Action("Index", "Rentals")'>View Rentals &raquo;</a></p>
     </div>
     <div class="col-md-4">
         <h2>Learn About Us</h2>
         <p>Learn more about us at BlowOut like where we came from, what our goals are, and how we aim to serve you!</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">About Blow Out &raquo;</a></p>
+        <p><a class="btn btn-default" href='@Url.Action("Index", "About")'>About Blow Out &raquo;</a></p>
     </div>
     <div class="col-md-4">
         <h2>Contact Our Team </h2>
-        <p>Questions? Comments? Drop us a line.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Contact Us&raquo;</a></p>
+        <p>Questions? Comments? Drop us a line, we're always listening!</p>
+        <p><a class="btn btn-default" href='@Url.Action("Index", "Contact")'>Contact Us&raquo;</a></p>
     </div>
 </div>

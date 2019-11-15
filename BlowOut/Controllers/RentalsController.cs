@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlowOut.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,14 @@ namespace BlowOut.Controllers
         // GET: Rentals
         public ActionResult Index()
         {
+            return View();
+        }
+
+        public ActionResult Rental(string name, int newPrice, int usedPrice)
+        {
+            ViewBag.Instrument = name;
+            ViewBag.Used = usedPrice;
+            ViewBag.New = newPrice;
             return View();
         }
     }

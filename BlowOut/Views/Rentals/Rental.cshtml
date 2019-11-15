@@ -1,0 +1,23 @@
+﻿@model BlowOut.Models.Rental
+
+@{
+    ViewBag.Title = "Rental";
+}
+
+
+
+<div class="w3-container" style="background-color:#737170; color: white">
+    <h1 style="text-align:center">@ViewBag.Instrument</h1>
+
+</div>
+
+<table style="width:100%; font-size: larger; text-align:center">
+    <tr>
+        <th>Used Price</th>
+        <th>New Price</th>
+    </tr>
+    <tr>
+        <td>$ @ViewBag.Used per month</td>
+        <td>$ @ViewBag.New per month</td>
+    </tr>
+</table>
