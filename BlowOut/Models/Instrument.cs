@@ -8,7 +8,9 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace BlowOut.Models
-{
+{   
+    //VARIABLES FOR THE INSTRUMENT OBJECT AND TABLE
+
     [Table("Instrument")]
     public class Instrument
     {

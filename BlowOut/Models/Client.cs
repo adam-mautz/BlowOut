@@ -8,7 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace BlowOut.Models
-{
+{   //VARIABLES FOR THE CLIENT OBJECT AND TABLE
+    //INCLDUED ANNOTOTAIONS FOR ALL, INCLUDING HIDDEN FOR ID VALUE
     [Table("Client")]
     public class Client
     {

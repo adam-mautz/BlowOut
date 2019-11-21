@@ -7,6 +7,7 @@ using BlowOut.Models;
 
 namespace BlowOut.DAl
 {
+    //ADDED BOTH MODELS TO DBCONTEXT 
     public class ClientInstrumentContext : DbContext
     {
         public ClientInstrumentContext() : base("ClientInstrumentContext")

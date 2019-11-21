@@ -1,11 +1,12 @@
-﻿//Adam Mautz
-//Changed some of the text on the index page to reflext checkpoint 1
+﻿//ADAM MAUTZ, AMBER HEWITT, MATTHEW BROWN, MCKAY BRYSON --- NOV 21 2019
+//ADDED ENTITY FRAMEFORK FUNCTIONALITY TO CHECKPOINT 3
+//USER CAN NOW SELECT AND INSTRUMENT LINKED TO A RELATED TABLE, ADD CLIENT INFORMATION AND SAVE IT TO A CLIENT TABLE. PRINT CONFIRMATION INFO
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
+using System.Web.Mvc; 
 
 namespace BlowOut.Controllers
 {

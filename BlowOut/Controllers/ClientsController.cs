@@ -13,41 +13,11 @@ namespace BlowOut.Controllers
 {
     public class ClientsController : Controller
     {
-        private ClientInstrumentContext db = new ClientInstrumentContext();
-
         public static List<Instrument> lstIns = new List<Instrument>();
 
-        // GET: Clients
-        public ActionResult Index()
-        {
-            return View(db.client.ToList());
-        }
 
-        // GET: Clients/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Client client = db.client.Find(id);
-            if (client == null)
-            {
-                return HttpNotFound();
-            }
-            return View(client);
-        }
+        // POST METHOD FOR CLIENTS. ADDS CLIENT RECORD AND UPDATES ISNTRUMENT
 
-        // GET: Clients/Create
-        public ActionResult Create(int ID)
-        {
-
-            return View();
-        }
-
-        // POST: Clients/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,First_Name,Last_Name,address,city,state,zip,email,phone")] Client client, int ID)
@@ -57,7 +27,7 @@ namespace BlowOut.Controllers
                 db.client.Add(client);
                 db.SaveChanges();
 
-
+                //UPDATES CUSTOMER_id ON INSTRUMENT RECORD
                 Instrument instrument = db.instrument.Find(ID);
                 instrument.Client_ID = client.Id;
                 db.SaveChanges();
@@ -68,8 +38,10 @@ namespace BlowOut.Controllers
             return View(client);
         }
 
+        //METHOD TO DISPLAY ORDER CONFIRMATION INFORMATION 
         public ActionResult Summary(int iID, int cID)
         {
+            //LOAD VIEWBAG WITH CORRECT INFO
             ViewBag.Name = db.client.Find(cID).First_Name;
             ViewBag.ID = db.client.Find(cID).Id;
             ViewBag.Instrument = db.instrument.Find(iID).description;
@@ -77,6 +49,7 @@ namespace BlowOut.Controllers
             ViewBag.Price = db.instrument.Find(iID).price;
             ViewBag.Total = db.instrument.Find(iID).price * 18;
 
+            //LOGIC TO DISPLAY CORRECT PICTURE
             if (db.instrument.Find(iID).description == "Trumpet")
             {
                 ViewBag.Image = "BT2S_0512-min_1024x1024.jpg";
@@ -108,6 +81,38 @@ namespace BlowOut.Controllers
 
 
 
+
+        /////////////// SCAFFOLDING CREATED ALL CODE BELOW
+
+
+        public ActionResult Create(int ID)
+        {
+
+            return View();
+        }
+
+        private ClientInstrumentContext db = new ClientInstrumentContext();
+
+        // GET: Clients
+        public ActionResult Index()
+        {
+            return View(db.client.ToList());
+        }
+
+        // GET: Clients/Details/5
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Client client = db.client.Find(id);
+            if (client == null)
+            {
+                return HttpNotFound();
+            }
+            return View(client);
+        }
 
 
         // GET: Clients/Edit/5
