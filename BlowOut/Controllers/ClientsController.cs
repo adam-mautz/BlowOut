@@ -60,6 +60,7 @@ namespace BlowOut.Controllers
 
                 Instrument instrument = db.instrument.Find(ID);
                 instrument.Client_ID = client.Id;
+                db.SaveChanges();
 
                 return RedirectToAction("Summary", new { iID = instrument.Id, cID = client.Id });
             }
