@@ -5,22 +5,6 @@
 }
 
 
-@*<div class="w3-container" style="background-color:#737170; color: white">
-    <h1 style="text-align:center">@ViewBag.Instrument</h1>
-
-</div>
-
-<table style="width:100%; font-size: larger; text-align:center">
-    <tr>
-        <th>Used Price</th>
-        <th>New Price</th>
-    </tr>
-    <tr>
-        <td>$ @ViewBag.Used per month</td>
-        <td>$ @ViewBag.New per month</td>
-    </tr>
-</table>*@
-
 <div class="w3-container">
     <h1 style="color: black; font-size: 100px">@ViewBag.Instrument</h1>
     <div style="text-align:center">
@@ -33,11 +17,15 @@
 
         <!-- Trigger/Open The Modal -->
         <br />
-        <button id="myBtn">Rental Details</button><br />
+        <button class="btn-group-sm" id="myBtn">Rental Details</button><br /><br />
+
+
+
+        <p><a class="btn btn-default" href='@Url.Action("Create", "Clients", new { Id = ViewBag.Id, Description = ViewBag.Instrument, Type = "New", Price = ViewBag.New  })'>Rent New &raquo;</a></p>
+        <p><a class="btn btn-default" href='@Url.Action("Create", "Clients",  new { Id = ViewBag.Id, Description = ViewBag.Instrument, Type = "Used", Price = ViewBag.Used })'>Rent Used &raquo;</a></p>
 
     </div>
     <hr>
-
 </div>
 
 

@@ -7,14 +7,14 @@
     <br /> <br />
 
 </body>
-
+<h1 style="text-align:center; color: black">NEW INSTRUMENTS</h1>
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
             <div class="panel panel-primary" style="color:#737170">
                 <div class="panel-heading">Trumpet</div>
                 <div class="panel-body" style="padding: 0">
-                    <a href='@Url.Action("Rental", "Rentals", new { name = "Trumpet", newPrice = 55, usedPrice = 25 })'>
+                    <a href='@Url.Action("Create", "Clients", new { ID = 1 })'>
                         <img src="~/Content/images/BT2S_0512-min_1024x1024.jpg" class="img-responsive" style="width:100%" alt="Image">
                     </a>
                 </div>
@@ -24,8 +24,8 @@
             <div class="panel panel-primary" style="overflow: hidden">
                 <div class="panel-heading">Trombone</div>
                 <div class="panel-body" style="padding: 0">
-                    <a href='@Url.Action("Rental", "Rentals", new { name = "Trombone", newPrice = 60, usedPrice = 35 })'>
-                        <img src="~/Content/images/trombone.jpg" class="img-responsive" style="max-height: 100%; max-width: 100%"  alt="Image">
+                    <a href='@Url.Action("Create", "Clients", new { ID = 2 })'>
+                        <img src="~/Content/images/trombone.jpg" class="img-responsive" style="max-height: 100%; max-width: 100%" alt="Image">
                     </a>
                 </div>
             </div>
@@ -34,7 +34,7 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">Tuba</div>
                 <div class="panel-body" style="padding: 0">
-                    <a href='@Url.Action("Rental", "Rentals", new { name = "Tuba", newPrice = 70, usedPrice = 50 })'>
+                    <a href='@Url.Action("Create", "Clients", new { ID = 3 })'>
                         <img src="~/Content/images/tuba.jpg" class="img-responsive" style="max-height: 100%; max-width: 100%" alt="Image">
                     </a>
                 </div>
@@ -49,7 +49,7 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">Flute</div>
                 <div class="panel-body" style="padding: 0">
-                    <a href='@Url.Action("Rental", "Rentals", new { name = "Flute", newPrice = 40, usedPrice = 25 })'>
+                    <a href='@Url.Action("Create", "Clients", new { ID = 4 })'>
                         <img src="~/Content/images/flute.jpg" class="img-responsive" style="max-height: 100%; max-width: 100%" alt="Image">
                     </a>
                 </div>
@@ -59,7 +59,7 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">Clarinet</div>
                 <div class="panel-body" style="padding: 0">
-                    <a href='@Url.Action("Rental", "Rentals", new { name = "Clarinet", newPrice = 35, usedPrice = 27 })'>
+                    <a href='@Url.Action("Rental", "Rentals", new { ID = 5 })'>
                         <img src="~/Content/images/calrinet.jpg" class="img-responsive" style="max-height: 100%; max-width: 100%" alt="Image">
                     </a>
                 </div>
@@ -69,7 +69,7 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">Saxaphone</div>
                 <div class="panel-body" style="padding: 0">
-                    <a href='@Url.Action("Rental", "Rentals", new { name = "Saxaphone", newPrice = 42, usedPrice = 30 })'>
+                    <a href='@Url.Action("Create", "Clients", new { ID = 6 })'>
                         <img src="~/Content/images/sax.jpg" class="img-responsive" style="max-height: 100%; max-width: 100%" alt="Image">
                     </a>
                 </div>
@@ -78,4 +78,75 @@
     </div>
 </div><br><br>
 
+<!--  USED INSTRUMENTS  -->
 
+<h1 style="text-align:center; color: black">USED INSTRUMENTS</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="panel panel-primary" style="color:#737170">
+                <div class="panel-heading">Trumpet</div>
+                <div class="panel-body" style="padding: 0">
+                    <a href='@Url.Action("Create", "Clients", new { ID = 7 })'>
+                        <img src="~/Content/images/BT2S_0512-min_1024x1024.jpg" class="img-responsive" style="width:100%" alt="Image">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-primary" style="overflow: hidden">
+                <div class="panel-heading">Trombone</div>
+                <div class="panel-body" style="padding: 0">
+                    <a href='@Url.Action("Create", "Clients", new { ID = 8 })'>
+                        <img src="~/Content/images/trombone.jpg" class="img-responsive" style="max-height: 100%; max-width: 100%" alt="Image">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Tuba</div>
+                <div class="panel-body" style="padding: 0">
+                    <a href='@Url.Action("Create", "Clients", new { ID = 9 })'>
+                        <img src="~/Content/images/tuba.jpg" class="img-responsive" style="max-height: 100%; max-width: 100%" alt="Image">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Flute</div>
+                <div class="panel-body" style="padding: 0">
+                    <a href='@Url.Action("Create", "Clients", new {ID = 10 })'>
+                        <img src="~/Content/images/flute.jpg" class="img-responsive" style="max-height: 100%; max-width: 100%" alt="Image">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Clarinet</div>
+                <div class="panel-body" style="padding: 0">
+                    <a href='@Url.Action("Create", "Clients", new{ ID = 11 })'>
+                        <img src="~/Content/images/calrinet.jpg" class="img-responsive" style="max-height: 100%; max-width: 100%" alt="Image">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Saxaphone</div>
+                <div class="panel-body" style="padding: 0">
+                    <a href='@Url.Action("Create", "Clients", new { ID = 12 })'>
+                        <img src="~/Content/images/sax.jpg" class="img-responsive" style="max-height: 100%; max-width: 100%" alt="Image">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><br><br>

@@ -1,0 +1,33 @@
+﻿
+@{
+                /**/
+
+                ViewBag.Title = "Summary";
+}
+
+<h1 style="color: black">Order Summary</h1> <br />
+
+<h3>@ViewBag.Name, thank you for your order! Please review the details below while we process the information.</h3>
+
+
+
+
+<table class="table-bordered" style="width:100%">
+    <tr>
+        <th>Order Number</th>
+        <th>Instrument</th>
+        <th>Type</th>
+        <th>Monthly Price</th>
+        <th>Total Cost</th>
+    </tr>
+    <tr>
+        <td>@ViewBag.ID</td>
+        <td>@ViewBag.Instrument</td>
+        <td>@ViewBag.Type</td>
+        <td>$@ViewBag.Price</td>
+        <td>$@ViewBag.Total</td>
+    </tr>
+</table>
+
+
+<div class="w3-container">  <img src="~/Content/images/@ViewBag.Image" style="  display: block;margin-left: auto; margin-right: auto; width: 50%;" /> </div>
