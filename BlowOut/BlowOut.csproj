@@ -210,6 +210,7 @@
     <Content Include="Views\Instruments\Edit.cshtml" />
     <Content Include="Views\Instruments\Index.cshtml" />
     <Content Include="Views\Clients\Summary.cshtml" />
+    <Content Include="Views\Instruments\ClientInstrument.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

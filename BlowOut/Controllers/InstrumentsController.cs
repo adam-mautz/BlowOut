@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using BlowOut.DAl;
 using BlowOut.Models;
+using System.Dynamic;
 
 namespace BlowOut.Controllers
 {
@@ -75,6 +76,19 @@ namespace BlowOut.Controllers
             }
             return View(instrument);
         }
+
+        //MODELinMODEL
+        public ActionResult ClientInstrument()
+        {
+            InstrumentClient myModel = new InstrumentClient();
+            myModel.clients = db.client.ToList();
+            myModel.instruments = db.instrument.ToList();
+            return View(myModel);
+        }
+
+
+
+
 
         // POST: Instruments/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
