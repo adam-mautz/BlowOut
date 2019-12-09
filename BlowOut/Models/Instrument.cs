@@ -5,29 +5,30 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
 
 namespace BlowOut.Models
-{   
-    //VARIABLES FOR THE INSTRUMENT OBJECT AND TABLE
-
+{
     [Table("Instrument")]
     public class Instrument
     {
         [Key]
-        [HiddenInput(DisplayValue = false)]
         public int Id { get; set; }
 
-        [HiddenInput(DisplayValue = false)]
-        public string description { get; set; }
+        [Required(ErrorMessage = "First name is required")]
+        [DisplayName("First name")]
+        [StringLength(50)]
+        public string Description { get; set; }
 
-        [HiddenInput(DisplayValue = false)]
-        public string type { get; set; }
+        [Required(ErrorMessage = "Type is required")]
+        [DisplayName("Type")]
+        [StringLength(50)]
+        public string Type { get; set; }
 
-        [HiddenInput(DisplayValue = false)]
-        public int price { get; set; }
+        [Required(ErrorMessage = "Price is required")]
+        [DisplayName("Price")]
+        public int Price { get; set; }
 
-        [HiddenInput(DisplayValue = false)]
+        [DisplayName("Client ID")]
         public int? Client_ID { get; set; }
     }
 }

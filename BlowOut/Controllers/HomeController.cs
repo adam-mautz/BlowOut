@@ -6,7 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc; 
+using System.Web.Mvc;
+using System.Web.Security;
 
 namespace BlowOut.Controllers
 {
@@ -29,6 +30,28 @@ namespace BlowOut.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult UpdateData()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult UpdateData(FormCollection form, bool rememberMe = false)
+        {
+            String username = form["Username"].ToString();
+            String password = form["Password"].ToString();
+
+            if (username == "Missouri" && password == "ShowMe")
+            {
+                FormsAuthentication.SetAuthCookie(username, rememberMe);
+                return RedirectToAction("Index", "Clients");
+            }
+            else
+            {
+                return View();
+            }
         }
     }
 }

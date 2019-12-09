@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Update Data";
+}
+
+<h2>Update Data</h2>
+
+<div style="text-align: center">
+    @using (Html.BeginForm("UpdateData", "Home", FormMethod.Post))
+    {
+        <label for="inputEmail">Username</label>
+        @Html.TextBox("Username")<br /><br />
+        <label for="inputPassword">Password</label>
+        @Html.Password("Password")<br /><br />
+        <button type="submit" class="fileBtn" style="text-align:center">Login</button>
+    }
+</div>

@@ -15,6 +15,12 @@ namespace BlowOut.Controllers
     {
         public static List<Instrument> lstIns = new List<Instrument>();
 
+        // GET: Clients
+        public ActionResult Index()
+        {
+            return View(db.client.ToList());
+        }
+
 
         // POST METHOD FOR CLIENTS. ADDS CLIENT RECORD AND UPDATES ISNTRUMENT
 
@@ -44,33 +50,33 @@ namespace BlowOut.Controllers
             //LOAD VIEWBAG WITH CORRECT INFO
             ViewBag.Name = db.client.Find(cID).First_Name;
             ViewBag.ID = db.client.Find(cID).Id;
-            ViewBag.Instrument = db.instrument.Find(iID).description;
-            ViewBag.Type = db.instrument.Find(iID).type;
-            ViewBag.Price = db.instrument.Find(iID).price;
-            ViewBag.Total = db.instrument.Find(iID).price * 18;
+            ViewBag.Instrument = db.instrument.Find(iID).Description;
+            ViewBag.Type = db.instrument.Find(iID).Type;
+            ViewBag.Price = db.instrument.Find(iID).Price;
+            ViewBag.Total = db.instrument.Find(iID).Price * 18;
 
             //LOGIC TO DISPLAY CORRECT PICTURE
-            if (db.instrument.Find(iID).description == "Trumpet")
+            if (db.instrument.Find(iID).Description == "Trumpet")
             {
                 ViewBag.Image = "BT2S_0512-min_1024x1024.jpg";
             }
-            else if (db.instrument.Find(iID).description == "Trombone")
+            else if (db.instrument.Find(iID).Description == "Trombone")
             {
                 ViewBag.Image = "Trombone.jpg";
             }
-            else if (db.instrument.Find(iID).description == "Flute")
+            else if (db.instrument.Find(iID).Description == "Flute")
             {
                 ViewBag.Image = "Flute.jpg";
             }
-            else if (db.instrument.Find(iID).description == "Saxaphone")
+            else if (db.instrument.Find(iID).Description == "Saxaphone")
             {
                 ViewBag.Image = "Sax.jpg";
             }
-            else if (db.instrument.Find(iID).description == "Clarinet")
+            else if (db.instrument.Find(iID).Description == "Clarinet")
             {
                 ViewBag.Image = "calrinet.jpg";
             }
-            else if (db.instrument.Find(iID).description == "Tuba")
+            else if (db.instrument.Find(iID).Description == "Tuba")
             {
                 ViewBag.Image = "Tuba.jpg";
             }
@@ -79,6 +85,12 @@ namespace BlowOut.Controllers
             return View();
         }
 
+
+        [HttpGet]
+        public ActionResult InstrumentsAndClients()
+        {
+            return View(db.client.ToList());
+        }
 
 
 
@@ -93,11 +105,7 @@ namespace BlowOut.Controllers
 
         private ClientInstrumentContext db = new ClientInstrumentContext();
 
-        // GET: Clients
-        public ActionResult Index()
-        {
-            return View(db.client.ToList());
-        }
+
 
         // GET: Clients/Details/5
         public ActionResult Details(int? id)
@@ -169,6 +177,13 @@ namespace BlowOut.Controllers
             Client client = db.client.Find(id);
             db.client.Remove(client);
             db.SaveChanges();
+
+            //deletes the Client that has been deleted from the instrument's Client_ID field
+            db.Database.ExecuteSqlCommand(
+                "UPDATE Instrument " +
+                "SET Client_ID = null " +
+                "WHERE Client_ID = '" + id + "'");
+
             return RedirectToAction("Index");
         }
 

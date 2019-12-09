@@ -37,10 +37,8 @@ namespace BlowOut.Controllers
         }
 
         // GET: Instruments/Create
-        public ActionResult Create(int instID, string Description, string Type, int Price, int clientID)
+        public ActionResult Create()
         {
-
-
             return View();
         }
 
@@ -49,7 +47,7 @@ namespace BlowOut.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "instrumentID,description,type,price,clientID")] Instrument instrument)
+        public ActionResult Create([Bind(Include = "Id,description,type,price,Client_ID")] Instrument instrument)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +79,7 @@ namespace BlowOut.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "instrumentID,description,type,price,clientID")] Instrument instrument)
+        public ActionResult Edit([Bind(Include = "Id,description,type,price,Client_ID")] Instrument instrument)
         {
             if (ModelState.IsValid)
             {
