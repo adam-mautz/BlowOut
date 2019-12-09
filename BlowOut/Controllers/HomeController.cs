@@ -46,7 +46,7 @@ namespace BlowOut.Controllers
             if (username == "Missouri" && password == "ShowMe")
             {
                 FormsAuthentication.SetAuthCookie(username, rememberMe);
-                return RedirectToAction("Index", "Clients");
+                return RedirectToAction("ClientInstrument", "Instruments");
             }
             else
             {

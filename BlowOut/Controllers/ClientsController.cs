@@ -143,13 +143,13 @@ namespace BlowOut.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "clintID,clientFirstName,clientLastName,address,city,state,zip,email,phone")] Client client)
+        public ActionResult Edit([Bind(Include = "Id, First_Name, Last_Name,address,city,state,zip,email,phone")] Client client)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(client).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("ClientInstrument","Instruments");
             }
             return View(client);
         }
@@ -184,7 +184,7 @@ namespace BlowOut.Controllers
                 "SET Client_ID = null " +
                 "WHERE Client_ID = '" + id + "'");
 
-            return RedirectToAction("Index");
+            return RedirectToAction("ClientInstrument","Instruments");
         }
 
         protected override void Dispose(bool disposing)

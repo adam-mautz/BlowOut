@@ -13,25 +13,32 @@
         <th>City</th>
         <th>State</th>
         <th>Zip</th>
+        <th>Options</th>
+
     </tr>
     @foreach (var client in Model.clients)
     {
-        <tr>
-            <td>@client.Id</td>
-            <td>@client.First_Name</td>
-            <td>@client.Last_Name</td>
-            <td>@client.address</td>
-            <td>@client.city</td>
-            <td>@client.state</td>
-            <td>@client.zip</td>
-        </tr>
+    <tr>
+        <td>@client.Id</td>
+        <td>@client.First_Name</td>
+        <td>@client.Last_Name</td>
+        <td>@client.address</td>
+        <td>@client.city</td>
+        <td>@client.state</td>
+        <td>@client.zip</td>
+        
+        <td>
+            @Html.ActionLink("Edit", "Edit", "Clients", new { id = client.Id }, null) |
+            @Html.ActionLink("Delete", "Delete","Clients", new { id = client.Id }, null)
+        </td>
+    </tr>
     }
 </table>
 
 <br />
 
 <table style="width: 100%">
-    <caption style="display: table-caption; text-align: center;">Instruments</caption>
+    <caption style="display: table-caption; text-align: center; color: black">Instruments</caption>
     <tr>
         <th>Id</th>
         <th>Description</th>
@@ -44,9 +51,9 @@
     {
         <tr>
             <td>@instrumet.Id</td>
-            <td>@instrumet.description</td>
-            <td>@instrumet.type</td>
-            <td>@instrumet.price</td>
+            <td>@instrumet.Description</td>
+            <td>@instrumet.Type</td>
+            <td>@instrumet.Price</td>
             <td>@instrumet.Client_ID</td>
         </tr>
     }

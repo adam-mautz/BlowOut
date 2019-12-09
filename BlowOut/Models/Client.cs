@@ -19,13 +19,11 @@ namespace BlowOut.Models
 
         [Required(ErrorMessage = "First name is required")]
         [DisplayName("First name")]
-        [StringLength(30)]
-        public String First_Name { get; set; }
+        public string First_Name { get; set; }
 
         [Required(ErrorMessage = "Last name is required")]
         [DisplayName("Last Name")]
-        [StringLength(30)]
-        public String Last_Name { get; set; }
+        public string Last_Name { get; set; }
 
         [Required(ErrorMessage = "Address is required")]
         [DisplayName("Address")]
